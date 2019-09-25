@@ -1,13 +1,31 @@
-## My Project
+# AWS IoT + esp32
 
-TODO: Fill this README out!
+This project contains several Arduino examples for [AWS IoT](https://aws.amazon.com/iot/) projects using ESP32 Wi-Fi+BLE based development modules.
 
-Be sure to:
+Arduino support for ESP32 modules can be found [here](https://github.com/espressif/arduino-esp32).
 
-* Change the title in this README
-* Edit your repository description on GitHub
+For each example you will need to [register an AWS IoT device](https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html) and create credentials.
 
-## License
+Each example has a "secrets.h" file where Wi-Fi and device credentials are to be stored.
 
-This library is licensed under the MIT-0 License. See the LICENSE file.
+## Required Parameters:
 
+- **WIFI_SSID**: The name of the Wi-Fi network to connect to. Should not include special characters or spaces.
+- **WIFI_PASSWORD**: The password of the Wi-Fi network to connect to. 
+- **THINGNAME**: Must match the name of the device in the AWS IoT console.
+- **AWS_IOT_ENDPOINT**: The endpoint associated with your AWS IoT Core account.
+- **AWS_CERT_CA**: [Amazon Root CA 1](https://www.amazontrust.com/repository/AmazonRootCA1.pem)  
+- **AWS_CERT_CRT**: AWS IoT Thing Certificate
+- **AWS_CERT_PRIVATE**: AWS IoT Thing Private Key
+
+## Required Arduino Libraries:
+
+- [MQTT](https://github.com/256dpi/arduino-mqtt)
+- [ArduinoJson](https://arduinojson.org/)
+
+## Examples:
+
+- **basic-pubsub**: Connects to AWS IoT. Demonstrates subscribing to and publishing to topics. Works great with the [lambda-iot-rule](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-2:826492788183:applications~lambda-iot-rule) serverless application.
+- **thermal-printer**: Connects to AWS IoT and subscribes to a topic. Prints messages out to a physical receipt printer.
+
+Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: MIT-0
