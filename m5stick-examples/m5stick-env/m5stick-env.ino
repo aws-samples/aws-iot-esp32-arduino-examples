@@ -35,6 +35,13 @@ Adafruit_BMP280 bme;
 
 #define TFT_GREY 0x5AEB // New colour
 
+unsigned long startMillis;
+unsigned long currentMillis;
+
+// Publish messages every 10 seconds
+ const unsigned long publish_interval = 10000;
+
+
 // The MQTT topics that this device should publish/subscribe
 #define AWS_IOT_PUBLISH_TOPIC   "esp32/pub"
 #define AWS_IOT_SUBSCRIBE_TOPIC "esp32/sub"
@@ -203,6 +210,9 @@ void calibrate(uint32_t timeout)
 
 
 void setup() {
+  //initial start time
+  startMillis = millis();
+
   M5.begin();
   Wire.begin(0,26);
   M5.Lcd.setRotation(3);
@@ -230,7 +240,13 @@ void setup() {
 }
 
 void loop() {
-  publishMessage();
-  delay(1000);
+  currentMillis = millis();
+
+  if (currentMillis - startMillis >= publish_interval)
+  {
+    publishMessage();
+    startMillis = currentMillis;
+  }
+
   client.loop();
 }

@@ -23,6 +23,11 @@
 
 #define TFT_GREY 0x5AEB // New colour
 
+unsigned long startMillis;
+unsigned long currentMillis;
+
+// Publish messages every 10 seconds
+ const unsigned long publish_interval = 10000;
 
 
 // The MQTT topics that this device should publish/subscribe
@@ -99,6 +104,9 @@ void messageHandler(String &topic, String &payload) {
 }
 
 void setup() {
+  //initial start time
+  startMillis = millis();
+
   M5.begin();
   M5.Lcd.setRotation(3);
   M5.Lcd.fillScreen(TFT_GREY);
@@ -111,7 +119,13 @@ void setup() {
 }
 
 void loop() {
-  publishMessage();
+  currentMillis = millis();
+
+  if (currentMillis - startMillis >= publish_interval)
+  {
+    publishMessage();
+    startMillis = currentMillis;
+  }
+
   client.loop();
-  delay(1000);
 }

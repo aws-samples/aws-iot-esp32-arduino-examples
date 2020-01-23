@@ -28,6 +28,9 @@ Each example has a "secrets.h" file where Wi-Fi and device credentials are to be
 - **basic-pubsub**: Connects to AWS IoT. Demonstrates subscribing to and publishing to topics. Works great with the [lambda-iot-rule](https://serverlessrepo.aws.amazon.com/applications/arn:aws:serverlessrepo:us-east-2:826492788183:applications~lambda-iot-rule) serverless application.
 - **thermal-printer**: Connects to AWS IoT and subscribes to a topic. Prints messages out to a physical receipt printer.
 - **spectral-sensor**: This example connects a [Sparkfun Spectral Triad (AS7265x)](https://learn.sparkfun.com/tutorials/spectral-triad-as7265x-hookup-guide/introduction) sensor to an Arduino connected to AWS IoT. This sensor examines light absorption on various wavelengths across IR, UV, and visible light. These values can be used to detect different materials.
+
+## M5Stick Examples:
+
 - **m5stick-lcd**: Connect an [M5Stick](https://m5stack.com/products/stick-c) to AWS IoT and display messages on its built in LCD.
 - **m5stick-env**: Publish magnetic compass heading, temperature, barometric pressure, and humidity to AWS IoT using an [M5Stick with the ENV hat module](https://m5stack.com/collections/m5-core/products/m5stickc-development-kit-with-hat).
 
