@@ -158,6 +158,7 @@ Back in the Serial Monitor, the message published to the topic esp32/sub prints 
 - [m5stick-lcd](https://github.com/aws-samples/aws-iot-esp32-arduino-examples/tree/master/m5stick-examples/m5stick-lcd): Connect an [M5Stick](https://m5stack.com/products/stick-c) to AWS IoT and display messages on its built in LCD.
 - [m5stick-button](https://github.com/aws-samples/aws-iot-esp32-arduino-examples/tree/master/m5stick-examples/m5stick-button): Publish an AWS IoT message on a button press.
 - [m5stick-env](https://github.com/aws-samples/aws-iot-esp32-arduino-examples/tree/master/m5stick-examples/m5stick-env): Publish magnetic compass heading, temperature, barometric pressure, and humidity to AWS IoT using an [M5Stick with the ENV hat module](https://m5stack.com/collections/m5-core/products/m5stickc-development-kit-with-hat).
+- [m5stick-fall-detect](https://github.com/aws-samples/aws-iot-esp32-arduino-examples/tree/master/m5stick-examples/m5stick-fall-detect): Publish an AWS IoT message when a free fall is detected using the built in IMU.
 
 
 Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: MIT-0
