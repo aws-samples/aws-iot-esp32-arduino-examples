@@ -18,6 +18,7 @@ You will need to [register an AWS IoT device](https://docs.aws.amazon.com/iot/la
 
 - [MQTT](https://github.com/256dpi/arduino-mqtt)
 - [ArduinoJson](https://arduinojson.org/)
+- [M5StickC](https://github.com/m5stack/M5StickC)
 
 
 ## Setting Topics

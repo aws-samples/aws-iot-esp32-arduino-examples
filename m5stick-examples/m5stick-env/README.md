@@ -6,6 +6,7 @@ This example publishes sensor values from the M5Stick ENV sensor hat to AWS IoT.
 
 - [MQTT](https://github.com/256dpi/arduino-mqtt)
 - [ArduinoJson](https://arduinojson.org/)
+- [M5StickC](https://github.com/m5stack/M5StickC)
 - [Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor)
 - [Adafruit BMP280](https://github.com/adafruit/Adafruit_BMP280_Library)
 
