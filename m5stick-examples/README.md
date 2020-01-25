@@ -46,7 +46,7 @@ The Arduino IDE is now installed and configured with all the board definitions a
 
 To communicate with the ESP32 device, it must connect to AWS IoT Core with device credentials. You must also specify the topics it has permissions to publish and subscribe on.
 
-1. In the AWS IoT console, choose **Register a new thing**, **Create a single thing**.
+1. In the AWS IoT Core console under **Manage**, choose **Register a new thing**, **Create a single thing**.
 2. Name the new thing **MyNewESP32**. Leave the remaining fields set to their defaults. Choose Next.
 3. Choose **Create certificate**. Only the *thing cert*, *private key*, and [Amazon Root CA 1](https://www.amazontrust.com/repository/AmazonRootCA1.pem) downloads are necessary for the ESP32 to connect. Download and save them somewhere secure, as they are used when programming the ESP32 device.
 4. Choose **Activate**, **Attach a policy**.
@@ -83,11 +83,12 @@ To communicate with the ESP32 device, it must connect to AWS IoT Core with devic
 }
 ```
 
-9. Replace **REGION** with the matching AWS Region you’re currently operating in. This can be found on the top right corner of the AWS console window.
-10. Replace **ACCOUNT_ID** with your own, which can be found in Account Settings.
-11. Choose **Create**.
-12. In the AWS IoT console, choose **Secure**, **Certification**. Select the one created for your device and choose **Actions**, **Attach policy**.
-13. Choose **Esp32Policy**, Attach.
+9. Replace **THINGNAME** with the name of of your Thing, MyNewESP32.
+10. Replace **REGION** with the matching AWS Region you’re currently operating in. This can be found on the top right corner of the AWS console window.
+11. Replace **ACCOUNT_ID** with your own, which can be found in Account Settings.
+12. Choose **Create**.
+13. In the AWS IoT console, choose **Secure**, **Certification**. Select the one created for your device and choose **Actions**, **Attach policy**.
+14. Choose **Esp32Policy**, Attach.
 
 Your AWS IoT device is now configured to have permission to connect to AWS IoT Core. It can also publish to the topic **esp32/pub** and subscribe to the topic **esp32/sub**. For more information on securing devices, see AWS IoT Policies.
 
