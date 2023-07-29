@@ -18,7 +18,12 @@
 #include <MQTTClient.h>
 #include <ArduinoJson.h>
 #include "WiFi.h"
-#include <M5StickC.h>
+
+#ifdef ARDUINO_M5Stick_C_PLUS
+  #include <M5StickCPlus.h>
+#else // ARDUINO_M5Stick_C
+  #include <M5StickC.h>
+#endif
 
 // Requires Adafruit Unified Sensor library and Adafruit BMP280 library
 #include "DHT12.h"

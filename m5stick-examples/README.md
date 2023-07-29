@@ -1,4 +1,4 @@
-# AWS IoT + M5StickC
+# AWS IoT + M5StickC / M5StickC Plus
 
 ![alt-text](https://pbs.twimg.com/media/ENUSd1jUYAAepFI?format=jpg&name=4096x4096)
 
@@ -23,7 +23,9 @@ This guide will install these using the Arduino library manager, but can also be
 
 - [MQTT](https://github.com/256dpi/arduino-mqtt)
 - [ArduinoJson](https://arduinojson.org/)
-- [M5StickC](https://github.com/m5stack/M5StickC)
+- Each model library
+    - [M5StickC](https://github.com/m5stack/M5StickC)
+    - [M5StickC Plus](https://github.com/m5stack/M5StickC-Plus)
 
 ## Installing and configuring the Arduino IDE
 
@@ -38,7 +40,7 @@ https://dl.espressif.com/dl/package_esp32_index.json.
 6. Search **esp32** and install the latest version.
 7. Choose **Sketch**, **Include Library**, **Manage Libraries**.
 8. Search **MQTT**, and install the latest version by **Joel Gaehwiler**.
-9. Repeat the library installation process for **ArduinoJson** and **M5StickC**
+9. Repeat the library installation process for **ArduinoJson** and model library ( **M5StickC** or **M5StickC Plus** for your model )
 
 The Arduino IDE is now installed and configured with all the board definitions and libraries needed for this walkthrough.
 
@@ -92,7 +94,7 @@ To communicate with the ESP32 device, it must connect to AWS IoT Core with devic
 
 Your AWS IoT device is now configured to have permission to connect to AWS IoT Core. It can also publish to the topic **esp32/pub** and subscribe to the topic **esp32/sub**. For more information on securing devices, see AWS IoT Policies.
 
-## Flash the M5StickC
+## Flash the M5StickC / M5StickC Plus
 
 1. Download [this GitHub project](https://github.com/aws-samples/aws-iot-esp32-arduino-examples) and open **m5stick-examples/m5stick-lcd** in the Arduino IDE.
 2. Fill in the following required parameters in the **secrets.h** tab. Use the credentials made in the previous section.
@@ -106,7 +108,7 @@ Your AWS IoT device is now configured to have permission to connect to AWS IoT C
   - **AWS_CERT_PRIVATE**: AWS IoT Thing Private Key
 
 
-3. Choose **Tools**, **Board**, and then select the matching type of ESP32 module. In this case, the **M5Stick**.
+3. Choose **Tools**, **Board**, and then select the matching type of ESP32 module. In this case, M5stack -> **M5Stick-C** or **M5Stick-C-Plus**
 4. Choose **Tools**, **Port**, and then select the matching port for your device.
 5. Choose **Upload**. Arduino reads *Done uploading* when the upload is successful.
 6. Choose the magnifying lens icon to open the **Serial Monitor**. Set the baud rate to **9600**.
@@ -156,7 +158,7 @@ Back in the Serial Monitor, the message published to the topic esp32/sub prints 
 
 ## M5Stick Examples:
 
-- [m5stick-lcd](https://github.com/aws-samples/aws-iot-esp32-arduino-examples/tree/master/m5stick-examples/m5stick-lcd): Connect an [M5Stick](https://m5stack.com/products/stick-c) to AWS IoT and display messages on its built in LCD.
+- [m5stick-lcd](https://github.com/aws-samples/aws-iot-esp32-arduino-examples/tree/master/m5stick-examples/m5stick-lcd): Connect [M5StickC](https://m5stack.com/products/stick-c) or [M5StickC Plus](https://docs.m5stack.com/en/core/m5stickc_plus) to AWS IoT and display messages on its built in LCD.
 - [m5stick-button](https://github.com/aws-samples/aws-iot-esp32-arduino-examples/tree/master/m5stick-examples/m5stick-button): Publish an AWS IoT message on a button press.
 - [m5stick-env](https://github.com/aws-samples/aws-iot-esp32-arduino-examples/tree/master/m5stick-examples/m5stick-env): Publish magnetic compass heading, temperature, barometric pressure, and humidity to AWS IoT using an [M5Stick with the ENV hat module](https://m5stack.com/collections/m5-core/products/m5stickc-development-kit-with-hat).
 - [m5stick-fall-detect](https://github.com/aws-samples/aws-iot-esp32-arduino-examples/tree/master/m5stick-examples/m5stick-fall-detect): Publish an AWS IoT message when a free fall is detected using the built in IMU.
