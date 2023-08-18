@@ -6,9 +6,11 @@ This example publishes sensor values from the M5Stick ENV sensor hat to AWS IoT.
 
 - [MQTT](https://github.com/256dpi/arduino-mqtt)
 - [ArduinoJson](https://arduinojson.org/)
-- [M5StickC](https://github.com/m5stack/M5StickC)
 - [Adafruit Unified Sensor](https://github.com/adafruit/Adafruit_Sensor)
 - [Adafruit BMP280](https://github.com/adafruit/Adafruit_BMP280_Library)
+- Each model library
+    - [M5StickC](https://github.com/m5stack/M5StickC)
+    - [M5StickC Plus](https://github.com/m5stack/M5StickC-Plus)
 
 
 You will need to [register an AWS IoT device](https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html) and create credentials.
